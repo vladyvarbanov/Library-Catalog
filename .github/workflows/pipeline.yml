@@ -36,7 +36,6 @@ jobs:
 
   deploy-be:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
     needs: build_and_test
     steps:
       - name: Deploy to production
@@ -47,7 +46,6 @@ jobs:
 
   deploy-fe:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
     needs: deploy-be
     steps:
       - name: Deploy to production
